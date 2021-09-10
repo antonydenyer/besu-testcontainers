@@ -1,5 +1,6 @@
 package net.consensys.besu.testcontainers
 
+import java.io.File
 import org.slf4j.LoggerFactory
 import org.testcontainers.containers.DockerComposeContainer
 import org.testcontainers.containers.output.Slf4jLogConsumer
@@ -9,7 +10,6 @@ import org.web3j.crypto.Credentials
 import org.web3j.protocol.core.JsonRpc2_0Web3j
 import org.web3j.protocol.http.HttpService
 import org.web3j.utils.Async
-import java.io.File
 
 class BesuNetwork {
     private val logger = LoggerFactory.getLogger(BesuNetwork::class.java)
@@ -57,4 +57,3 @@ class BesuNetwork {
     fun stop() = instance.stop()
     fun get(key: String) = nodes[key]!!
 }
-
