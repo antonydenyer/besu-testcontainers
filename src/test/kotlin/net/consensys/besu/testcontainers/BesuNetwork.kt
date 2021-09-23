@@ -42,7 +42,7 @@ class BesuNetwork {
         nodes = serviceNames
             .associateWith {
                 val rpcUrl =
-                    "http://${instance.getServiceHost("alice_1", 8545)}:${instance.getServicePort("alice_1", 8545)}"
+                    "http://${instance.getServiceHost("${it}_1", 8545)}:${instance.getServicePort("${it}_1", 8545)}"
                 val web3j = JsonRpc2_0Web3j(HttpService(rpcUrl), 2000, Async.defaultExecutorService())
                 val credentials =
                     Credentials.create(getResource(BesuNetwork::class.java, "/config/$it/key").readText())
